@@ -1,0 +1,22 @@
+#Grafico de barras_funcion-genes
+
+
+# Activar ggplot2
+library(ggplot2)
+
+# Crear un conjunto de datos
+datos <- data.frame(
+ Funcion = c("TO", "SI", "MAC", "MC", "RO", "AS", "DDC", "TH", "EC"),
+ Porcentaje = c(20, 20, 20, 15, 5, 5, 5, 5, 5)
+)
+
+# Crear un gráfico de barras con ggplot2
+grafico_barras <- ggplot(datos, aes(x = Funcion, y = Porcentaje)) +
+ geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+ labs(title = "Función de los 20 genes con expresión diferencial más significativa",
+        x = "Funcion",
+        y = "Porcentaje") +
+ theme_minimal() # Modificar para eliminar el fondo gris con cuadros
+
+# Mostrar el gráfico
+print(grafico_barras)
